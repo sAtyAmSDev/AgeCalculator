@@ -1,0 +1,113 @@
+:root {
+    --first-color: white;
+    --second-color: #2d2325;
+    --third-color: #e71257;
+    --fourthr-color: gray;
+}
+
+.darkTheam {
+    --first-color: #2d2325;
+    --second-color: #FFF;
+    --third-color: #e71257;
+    --fourthr-color: gray;
+}
+
+body {
+    color: var(--first-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2pc;
+    background-color: var(--second-color);
+}
+
+nav {
+    gap: 5pc;
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    color: var(--fourthr-color);
+    width: 30px;
+}
+
+nav h1 {
+    font-size: 3rem;
+}
+
+nav #icon {
+    cursor: pointer;
+}
+
+button .DownArrow {
+    color: #FFF;
+    width: 50px;
+}
+
+#DownArrow:hover {
+    color: var(--third-color);
+}
+
+button {
+    border: none;
+    background: transparent;
+    color: var(--first-color);
+    padding: 5px;
+    font-size: larger;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--third-color);
+    /* border: 1px solid var(--third-color); */
+}
+
+.inputBox input {
+    background: transparent;
+    width: 12vw;
+    font-size: 18px;
+    padding: 5px;
+    color: var(--first-color);
+    border: 1px solid var(--fourthr-color);
+    border-radius: 6px;
+    outline: none;
+}
+
+.inputBox input:hover {
+    border: 1px solid var(--third-color);
+    color: var(--third-color);
+}
+
+.inputBox {
+    display: flex;
+    gap: 1pc;
+}
+
+.text h1 {
+    gap: 1pc;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.text h1 p {
+    color: var(--fourthr-color);
+}
+
+.text h1 p:hover {
+    color: var(--first-color);
+}
+
+h1:hover {
+    color: var(--third-color);
+}
+
+span {
+    color: var(--third-color);
+}
+
+span:hover {
+    color: var(--first-color);
+}

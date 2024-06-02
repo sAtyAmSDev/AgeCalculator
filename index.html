@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1> <span>Age</span> Calculator</h1>
+        <img id="icon" src="image/sun-xxl.png" alt="">
+    </nav>
+
+    <div class="inputBox">
+        <input type="number" id="InputDay" placeholder="Date" max="1" min="31" required>
+        <input type="number" id="InputMonth" placeholder="Month" max="1" min="12" required>
+        <input type="number" id="InputYear" placeholder="Year" required>
+    </div>
+    <button onclick="ShowData()"><img class="DownArrow" src="/image/down-arrow.png" alt="" srcset=""></button>
+    <div class="text" style="display: none;">
+        <h1><span>Day : </span>
+            <p class="date"> Day</p>
+        </h1>
+        <h1><span>Month : </span>
+            <p class="month"> Month</p>
+        </h1>
+        <h1><span>Year : </span>
+            <p class="year"> Year</p>
+        </h1>
+    </div>
+
+</body>
+
+<script>
+    var icon = document.getElementById("icon")
+
+    icon.onclick = function() {
+        document.body.classList.toggle("darkTheam")
+        if (document.body.classList.contains("darkTheam")) {
+            icon.src = "image/moon-xxl.png"
+        } else {
+            icon.src = "image/sun-xxl.png"
+        }
+    }
+
+
+    function ShowData() {
+        var InputDay = document.getElementById("InputDay").value
+        var InputMonth = document.getElementById("InputMonth").value
+        var InputYear = document.getElementById("InputYear").value
+        if (!InputDay || !InputMonth || !InputYear) {
+            alert("Please fill out all fields correctly.")
+            return
+        }
+        var nowDate = new Date()
+
+        var CurrentYear = nowDate.getFullYear()
+        var CurrentMonth = nowDate.getMonth() + 1
+        var CurrentDay = nowDate.getDay()
+
+        var ageYear = CurrentYear - InputYear
+        var ageMonth = CurrentMonth - InputMonth
+        var ageDay = CurrentDay - InputDay
+
+        if (ageDay < 0) {
+            ageMonth -= 1
+            ageDay += new Date(CurrentYear, CurrentMonth, 0).getDate()
+        }
+        if (ageMonth < 0) {
+            ageYear -= 1
+            ageMonth += 12
+        }
+        console.log(ageDay);
+        console.log(ageMonth);
+        console.log(ageYear);
+
+        document.querySelector(".date").textContent = ageDay + " " + "Day"
+        document.querySelector(".month").textContent = ageMonth + " " + "Month"
+        document.querySelector(".year").textContent = ageYear + " " + "Year"
+        document.querySelector(".text").style.display = "block"
+
+    }
+</script>
+
+</html>
