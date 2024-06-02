@@ -52,10 +52,12 @@
         var InputDay = document.getElementById("InputDay").value
         var InputMonth = document.getElementById("InputMonth").value
         var InputYear = document.getElementById("InputYear").value
+
         if (!InputDay || !InputMonth || !InputYear) {
             alert("Please fill out all fields correctly.")
             return
         }
+
         var nowDate = new Date()
 
         var CurrentYear = nowDate.getFullYear()
